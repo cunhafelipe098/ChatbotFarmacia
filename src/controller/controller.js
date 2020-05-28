@@ -6,7 +6,7 @@ let controller = {
   },
 
   async chatbotmanager (req, res) {
-    res.json({status: req.fulfillmentMessages })
+    res.json({status: req })
   }
 }
 
