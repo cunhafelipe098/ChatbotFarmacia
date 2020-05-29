@@ -1,4 +1,4 @@
-const app = require ('./src/router')
+const app = require ('./src/index')
 
 const port = process.env.PORT || 3030
 

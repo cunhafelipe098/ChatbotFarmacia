@@ -1,16 +1,14 @@
-const Express = require('express')
-const app = new Express()
+const controller = require('./controller/information')
 
-const controller = require('./controller/controller')
-
-let domain
-
-app.use(Express.json())
-app.use((req,res,next) => {
+function defineDomain (req,res) {
+  const intent = req.body.queryResult.intent.displayName
   
-  next()
-})
-app.get('/', controller.testConnection )
-app.post('/', controller.chatbotmanager )
+  switch (intent) {
+    case 'informacoes':
+      return controller.chatbotmanager (req,res)
+    default:
+      return res.json({error: "nonexistent domain" });
+  }
+}
 
-module.exports = app
+module.exports = defineDomain

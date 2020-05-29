@@ -1,4 +1,4 @@
-const service = require('../service/service')
+const service = require('../service/information')
 
 let controller = {
   async testConnection (req, res) {
@@ -6,7 +6,9 @@ let controller = {
   },
 
   async chatbotmanager (req, res) {
-    res.json({status: req.body })
+
+    const data = req.body.queryResult
+    res.json( data.parameters )
   }
 }
 
