@@ -7,8 +7,8 @@ let controller = {
 
   async chatbotmanager (req, res) {
 
-    const data = req.body.queryResult
-    res.json( data.parameters )
+    const data = req.body
+    res.json( data )
   }
 }
 
